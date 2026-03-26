@@ -1,0 +1,43 @@
+{% extends 'energy/base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">📊 Dashboard</h2>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card bg-primary p-4 text-center">
+            <h5>Average Usage</h5>
+            <h2>{{ avg }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-success p-4 text-center">
+            <h5>Prediction</h5>
+            <h2>{{ prediction }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-danger p-4 text-center">
+            <h5>Alerts</h5>
+            <h2>{{ spikes|length }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<hr class="my-4">
+
+<h4>📈 Energy Trend</h4>
+<div class="card p-3 bg-dark">
+    <img src="data:image/png;base64,{{ chart }}" class="img-fluid">
+</div>
+
+<br>
+
+<a href="/add/" class="btn btn-warning btn-custom">➕ Add Data</a>
+
+{% endblock %}

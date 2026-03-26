@@ -1,0 +1,10 @@
+<nav class="navbar px-4 d-flex justify-content-between">
+    <h3>⚡ Smart Energy System</h3>
+
+    <div>
+        {% if user.is_authenticated %}
+            <span class="me-3">Hello, {{ user.username }}</span>
+            <a href="/accounts/logout/" class="btn btn-danger btn-sm">Logout</a>
+        {% endif %}
+    </div>
+</nav>
